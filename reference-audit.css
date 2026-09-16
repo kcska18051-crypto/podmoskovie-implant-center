@@ -1,0 +1,40 @@
+/* Mobile composition checked against the clinic sedation page.
+   Keep the user-approved desktop portraits and light palette. */
+@media(max-width:780px){
+ #otzyvy .rev{position:relative;margin-top:28px;overflow:hidden}
+ #otzyvy .rev-track{display:block;transform:none!important;transition:none}
+ #otzyvy .rev-slide{display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto 62px 300px;min-height:0;gap:0}
+ #otzyvy .rev-slide[aria-hidden="true"]{display:none}
+ #otzyvy .rs-body{grid-column:1;grid-row:1;padding:32px 14px 44px;margin:0;align-self:stretch}
+ #otzyvy .rs-body::before{inset:0;transform:none;border-radius:0;background:#e5f4f6;mask:url('assets/review-card-bg-mobile.svg') center/100% 100% no-repeat}
+ #otzyvy .rs-top{display:flex;flex-direction:row;flex-wrap:nowrap;align-items:flex-start;gap:10px;margin-bottom:28px}
+ #otzyvy .rs-src{min-width:0;flex:1}
+ #otzyvy .rs-src .pd-logo{width:100%;max-width:187px;height:auto;margin:0 0 4px}
+ #otzyvy .rs-src span{font-family:Ubuntu,sans-serif;font-size:11px;line-height:1.3;white-space:nowrap}
+ #otzyvy .rs-badge{flex:0 0 42%;min-width:0;max-width:147px;width:auto;padding:7px 6px;border-radius:10px}
+ #otzyvy .rs-rate{gap:6px}
+ #otzyvy .rs-rate b{font-size:16px}
+ #otzyvy .stars svg{width:12px;height:12px}
+ #otzyvy .rs-cap{font-size:7px;line-height:1.3;white-space:nowrap}
+ #otzyvy .rs-body h3{font:600 20px/1.2 Montserrat,sans-serif;margin:0 0 5px}
+ #otzyvy .rs-role{font-size:16px;line-height:1.4;margin-bottom:28px}
+ #otzyvy .rs-body blockquote{font-size:16px;line-height:1.5;margin:0}
+ #otzyvy .rs-link{font-size:15px;line-height:1.35;margin-top:18px}
+ #otzyvy .rs-photo{grid-column:1;grid-row:3;width:100%;max-width:420px;height:300px;min-height:0;padding:0 12px;margin:0 auto;border:0;border-radius:0;align-self:end;background:radial-gradient(ellipse at 50% 90%,#edf8fa,transparent 70%);mask:url('assets/doctor-mask-mobile.svg') center/100% 100% no-repeat}
+ #otzyvy .rs-photo img{height:300px;width:100%;object-fit:contain;object-position:center bottom}
+ #otzyvy .rev-nav{position:absolute;right:22px;bottom:310px;height:44px;margin:0;padding:0;gap:10px;z-index:3}
+ #otzyvy .rev-nav button{width:36px;height:44px}
+ #otzyvy .rev-count{font-size:22px}
+ .faq-section .faq summary{grid-template-columns:minmax(0,1fr);gap:12px;padding:22px 48px 22px 18px;font-size:18px}
+ .faq-section .faq-number{font-size:27px}
+ .faq-section .faq details p{padding:0 18px 24px;font-size:15px}
+}
+@media(max-width:360px){
+ #otzyvy .rs-src span{font-size:9px}
+ #otzyvy .rs-body h3{font-size:18px}
+ #otzyvy .rs-rate{gap:4px}
+ #otzyvy .stars svg{width:10px;height:10px}
+ #otzyvy .rs-cap{font-size:6px}
+}
+
+
