@@ -94,3 +94,7 @@ section,section.usp-section{padding:80px 0}
 }
 @media(max-width:800px){.capabilities{grid-template-columns:minmax(0,1fr)}.cap-tabs{grid-template-columns:repeat(2,minmax(0,1fr))}.cap-tab{min-width:0;overflow-wrap:anywhere}.cap-panels{min-width:0}}
 @media(max-width:360px){.hero h1{font-size:25px}.hero-copy{grid-template-columns:minmax(0,1fr) 90px;column-gap:10px}.hero-art{width:90px;height:215px}.hf-head h3{font-size:21px}}
+/* Keep the mobile description close to the heading and form. */
+@media(max-width:800px){.hero-grid{gap:18px}.hero-copy{align-items:start;row-gap:16px;grid-template-columns:minmax(0,1fr) 120px}.hero-sub{align-self:start}.hero-art{align-self:start;width:120px;height:180px}}
+@media(max-width:560px){.hero-copy{grid-template-columns:minmax(0,1fr) 86px}.hero-art{width:86px;height:140px}}
+
