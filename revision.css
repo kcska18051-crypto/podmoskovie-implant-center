@@ -75,3 +75,22 @@ section,section.usp-section{padding:80px 0}
 #otzyvy .rs-photo img{height:490px;width:100%;object-fit:contain;object-position:center bottom;display:block}
 @media(min-width:781px) and (max-width:1100px){#otzyvy .rs-photo{padding:20px 10px 0;margin-right:16px}#otzyvy .rs-photo img{height:440px}}
 @media(max-width:780px){#otzyvy .rev-slide{grid-template-columns:1fr}#otzyvy .rs-photo{width:100%;max-width:420px;margin:0 auto 24px;padding:20px 20px 0}#otzyvy .rs-photo img{height:350px}}
+/* Mobile hero follows content height; crop only the empty image canvas. */
+@media(max-width:800px){
+ .hero-grid{gap:24px}
+ .hero-copy{display:grid;grid-template-columns:minmax(0,1fr) 150px;column-gap:20px;row-gap:18px;min-height:0;padding:0;align-items:center}
+ .hero-eyebrow,.hero h1{grid-column:1/-1;margin:0;max-width:none}
+ .hero h1{font-size:clamp(29px,5.7vw,42px);line-height:1.12}
+ .hero-sub{grid-column:1;grid-row:3;max-width:none;margin:0;font-size:16px;line-height:1.6}
+ .hero-art{position:static;grid-column:2;grid-row:3;width:150px;height:250px;max-width:100%;object-fit:cover;object-position:76% center;margin:0;align-self:center}
+}
+@media(max-width:560px){
+ .hero-copy{grid-template-columns:minmax(0,1fr) 106px;column-gap:12px;row-gap:18px;min-height:0}
+ .hero h1{font-size:clamp(28px,7.5vw,35px)}
+ .hero-sub{font-size:14px;line-height:1.6}
+ .hero-art{width:106px;height:230px}
+ .hero-eyebrow{font-size:10px;line-height:1.5}
+ .hero-form{padding:23px}
+}
+@media(max-width:800px){.capabilities{grid-template-columns:minmax(0,1fr)}.cap-tabs{grid-template-columns:repeat(2,minmax(0,1fr))}.cap-tab{min-width:0;overflow-wrap:anywhere}.cap-panels{min-width:0}}
+@media(max-width:360px){.hero h1{font-size:25px}.hero-copy{grid-template-columns:minmax(0,1fr) 90px;column-gap:10px}.hero-art{width:90px;height:215px}.hf-head h3{font-size:21px}}
