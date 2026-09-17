@@ -99,3 +99,8 @@
 .video-play{position:absolute;top:68%;left:50%;transform:translate(-50%,-50%);width:54px;height:54px;display:grid;place-items:center;border-radius:50%;background:#fff;color:#0096aa;font-size:22px;box-shadow:0 4px 18px #0096aa20}
 .video-service{position:absolute;bottom:18px;left:20px;background:#fffdfd;color:#0096aa;padding:5px 8px;border-radius:6px;font:500 11px Montserrat,sans-serif}
 .video-launch:hover .video-play{background:#0096aa;color:white}
+/* Center media controls independently of font metrics. */
+.interior-arrow{display:grid;place-items:center;padding:0;line-height:0}
+.interior-arrow svg{display:block;width:25px;height:25px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.video-play{top:50%;display:grid;place-items:center;line-height:0}
+.video-play svg{display:block;width:24px;height:24px;fill:currentColor}
