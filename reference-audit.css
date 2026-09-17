@@ -38,3 +38,40 @@
 }
 
 
+/* Compact mobile explorers and portrait cards, requested September 17. */
+@media(min-width:1001px){.usp-section .section-intro{max-width:none}}
+.mobile-carousel-controls{display:none}
+@media(max-width:800px){
+ .solution-tabs,.cap-tabs{display:flex;flex-direction:row;justify-content:flex-start;flex-wrap:nowrap;overflow-x:auto;gap:8px;margin:14px 0;scrollbar-width:thin;scrollbar-color:#b3e0e6 transparent}
+ .solution-tab,.cap-tab{flex:0 0 auto;min-height:42px;padding:10px 14px;font-size:13px;border:1px solid #0096aa;border-radius:9px;white-space:nowrap}
+ .cap-tab span,.solution-tab[aria-selected=true]::after{display:none}
+ .capabilities{gap:0;margin-top:18px;display:block}
+ .solution-intro{font-size:13px;line-height:1.5;margin-bottom:12px}
+ #tseny h2{font-size:27px;margin-bottom:14px}
+ .solution-panel{gap:12px}
+ .solution-panel figure img{height:155px;width:100%;aspect-ratio:auto}
+ .solution-copy h3{font-size:22px;margin:0 0 8px}
+ .solution-who,.solution-explanation{font-size:13px;line-height:1.45;margin:0 0 9px}
+ .solution-copy ul{gap:5px;margin:10px 0}
+ .solution-copy li{font-size:13px;line-height:1.4;gap:7px}
+ .solution-bottom{flex-direction:row;align-items:center;gap:12px;padding-top:12px;margin-top:12px}
+ .solution-bottom .btn{width:auto;flex:1;padding:12px 10px;font-size:12px}
+ .solution-price,.solution-price-individual{font-size:21px;flex:1;min-width:0}
+ .solution-price small{min-width:0;font-size:10px;line-height:1.3;margin-top:4px}
+ .cap-panel{padding:14px 18px 20px}
+ .cap-panel img{height:190px}
+ .cap-panel h3{font-size:22px;margin:8px 0}
+ .cap-panel p{font-size:14px;line-height:1.5;margin-bottom:0}
+ .mobile-carousel-controls{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:12px 0;color:#0096aa}
+ .mobile-carousel-controls button{border:1px solid #b3e0e6;border-radius:50%;background:#fff;color:#0096aa;width:44px;height:44px;cursor:pointer;font-size:23px;flex:none}
+ .mobile-carousel-controls .carousel-status{text-align:center;font-size:12px;line-height:1.5}
+ .carousel-status small{display:block;font-size:10px;color:#526669}
+ .solution-panels,.cap-panels{touch-action:pan-y}
+ #vrachi .team .doc{flex-direction:column;display:flex}
+ #vrachi .team .doc .ph{flex:none;width:100%;height:280px;overflow:hidden}
+ #vrachi .team .doc .ph img{width:100%;height:280px;min-height:0;max-height:280px;object-fit:contain;object-position:center bottom}
+ #vrachi .team .doc .db{width:100%;padding:22px}
+ #vrachi .team .doc h3{font-size:21px}
+ #vrachi .team .doc .role,#vrachi .team .doc .meta{font-size:14px}
+}
+

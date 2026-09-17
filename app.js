@@ -32,3 +32,28 @@ if(caseGallery){
  prev.addEventListener('click',()=>moveCase(-1));next.addEventListener('click',()=>moveCase(1));caseGallery.addEventListener('scroll',updateCase,{passive:true});window.addEventListener('resize',updateCase);
  caseGallery.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();moveCase(e.key==='ArrowRight'?1:-1)}});updateCase();
 }
+
+// Mobile explorers share the existing accessible tabs; arrows and swipes
+// activate the same buttons, so desktop and mobile stay in sync.
+function mobileExplorer(tabSelector,panelContainerSelector,label){
+ const tabs=[...document.querySelectorAll(tabSelector)],host=document.querySelector(panelContainerSelector);
+ if(!host||!tabs.length)return;
+ const controls=document.createElement('div');controls.className='mobile-carousel-controls';
+ const prev=document.createElement('button'),next=document.createElement('button'),status=document.createElement('span');
+ prev.type=next.type='button';prev.textContent='←';next.textContent='→';
+ prev.setAttribute('aria-label',`Предыдущая карточка: ${label}`);next.setAttribute('aria-label',`Следующая карточка: ${label}`);
+ status.className='carousel-status';status.setAttribute('aria-live','polite');
+ controls.append(prev,status,next);host.before(controls);
+ const selected=()=>Math.max(0,tabs.findIndex(t=>t.getAttribute('aria-selected')==='true'));
+ const update=()=>{const i=selected();status.replaceChildren(document.createTextNode(`${i+1} / ${tabs.length}`));const hint=document.createElement('small');hint.textContent='Листайте влево или вправо';status.append(hint);
+ if(matchMedia('(max-width:800px)').matches){const list=tabs[i].parentElement;list.scrollTo({left:tabs[i].offsetLeft-list.offsetLeft-(list.clientWidth-tabs[i].offsetWidth)/2,behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'instant':'smooth'});}};
+ const move=delta=>tabs[(selected()+delta+tabs.length)%tabs.length].click();
+ prev.addEventListener('click',()=>move(-1));next.addEventListener('click',()=>move(1));
+ tabs.forEach(t=>{t.addEventListener('click',update);t.addEventListener('keydown',()=>queueMicrotask(update));});
+ let start=null;
+ host.addEventListener('touchstart',e=>{const t=e.touches[0];start={x:t.clientX,y:t.clientY}},{passive:true});
+ host.addEventListener('touchend',e=>{if(!start||!matchMedia('(max-width:800px)').matches)return;const t=e.changedTouches[0],dx=t.clientX-start.x,dy=t.clientY-start.y;start=null;if(Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy)*1.4)move(dx<0?1:-1)},{passive:true});
+ host.addEventListener('touchcancel',()=>{start=null},{passive:true});update();
+}
+mobileExplorer('.solution-tab','.solution-panels','восстановление зубов');
+mobileExplorer('.cap-tab','.cap-panels','возможности центра');
