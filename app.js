@@ -57,3 +57,12 @@ function mobileExplorer(tabSelector,panelContainerSelector,label){
 }
 mobileExplorer('.solution-tab','.solution-panels','восстановление зубов');
 mobileExplorer('.cap-tab','.cap-panels','возможности центра');
+
+const interiorTrack=document.querySelector('.interior-track');
+if(interiorTrack){
+ const moveInterior=direction=>{const slide=interiorTrack.querySelector('.interior-slide');const step=slide.getBoundingClientRect().width+parseFloat(getComputedStyle(interiorTrack).gap);const end=interiorTrack.scrollWidth-interiorTrack.clientWidth;let left=interiorTrack.scrollLeft+direction*step;if(direction>0&&interiorTrack.scrollLeft>=end-2)left=0;if(direction<0&&interiorTrack.scrollLeft<=2)left=end;interiorTrack.scrollTo({left,behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'instant':'smooth'})};
+ document.querySelector('.interior-arrow.prev').addEventListener('click',()=>moveInterior(-1));
+ document.querySelector('.interior-arrow.next').addEventListener('click',()=>moveInterior(1));
+ interiorTrack.addEventListener('keydown',e=>{if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();moveInterior(e.key==='ArrowRight'?1:-1)}});
+}
+document.querySelectorAll('.video-launch').forEach(button=>button.addEventListener('click',()=>{const frame=document.createElement('iframe');frame.src=`https://vkvideo.ru/video_ext.php?oid=-202085834&id=${button.dataset.video}&hd=2&autoplay=0`;frame.title=button.getAttribute('aria-label');frame.allow='fullscreen; encrypted-media; picture-in-picture';frame.allowFullscreen=true;button.replaceWith(frame)}));

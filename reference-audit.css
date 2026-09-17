@@ -75,3 +75,27 @@
  #vrachi .team .doc .role,#vrachi .team .doc .meta{font-size:14px}
 }
 
+/* Clinic interior and supplied VK videos. */
+.interior-section{background:linear-gradient(180deg,#f2fafb,#fff)}
+.interior-gallery{position:relative;margin-top:30px}
+.interior-track{display:flex;gap:28px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;border-radius:20px}
+.interior-track::-webkit-scrollbar{display:none}
+.interior-slide{flex:0 0 44%;scroll-snap-align:start;display:block;overflow:hidden;border-radius:20px}
+.interior-slide img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover}
+.interior-arrow{position:absolute;top:50%;transform:translateY(-50%);width:52px;height:52px;border:0;border-radius:50%;background:#e2f5f5ed;color:#0096aa;font-size:44px;line-height:1;cursor:pointer;box-shadow:0 3px 14px #22282912}
+.interior-arrow.prev{left:12px}.interior-arrow.next{right:12px}
+.media-hint{font-size:13px;color:#526669;margin-top:16px}
+.video-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:20px;margin-top:28px}
+.video-card{min-width:0}.video-player{aspect-ratio:9/16;border-radius:16px;overflow:hidden;background:#e5f4f6}
+.video-player iframe{display:block;width:100%;height:100%;border:0}
+.video-card h3{font:500 18px/1.3 Ubuntu,sans-serif;margin:16px 0 10px}
+.video-card>a{font-size:13px;color:#0096aa;text-decoration:none}
+.video-hint{display:none}
+@media(max-width:800px){.interior-slide{flex-basis:86%}.interior-track{gap:14px}.interior-arrow{width:42px;height:42px;font-size:34px}.video-grid{display:flex;overflow-x:auto;gap:16px;scroll-snap-type:x mandatory;padding-bottom:12px}.video-card{flex:0 0 72%;scroll-snap-align:start}.video-hint{display:block}.video-player{max-height:440px}.video-card h3{font-size:20px}}
+.video-launch{position:relative;width:100%;height:100%;border:0;padding:22px;text-align:left;background:radial-gradient(ellipse at 100% 0,#b3e0e6,transparent 75%),linear-gradient(155deg,#f0fbfc,#d5edf0);color:#222829;cursor:pointer;display:flex;flex-direction:column;align-items:flex-start}
+.video-launch>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.video-brand{font:500 11px Montserrat,sans-serif;letter-spacing:.08em;color:#0096aa}
+.video-cover-title{font:500 25px/1.2 Ubuntu,sans-serif;margin-top:34px;position:relative}
+.video-play{position:absolute;top:68%;left:50%;transform:translate(-50%,-50%);width:54px;height:54px;display:grid;place-items:center;border-radius:50%;background:#fff;color:#0096aa;font-size:22px;box-shadow:0 4px 18px #0096aa20}
+.video-service{position:absolute;bottom:18px;left:20px;background:#fffdfd;color:#0096aa;padding:5px 8px;border-radius:6px;font:500 11px Montserrat,sans-serif}
+.video-launch:hover .video-play{background:#0096aa;color:white}
