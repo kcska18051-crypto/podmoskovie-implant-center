@@ -66,3 +66,6 @@ if(interiorTrack){
  interiorTrack.addEventListener('keydown',e=>{if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();moveInterior(e.key==='ArrowRight'?1:-1)}});
 }
 document.querySelectorAll('.video-launch').forEach(button=>button.addEventListener('click',()=>{const frame=document.createElement('iframe');frame.src=`https://vkvideo.ru/video_ext.php?oid=-202085834&id=${button.dataset.video}&hd=2&autoplay=0`;frame.title=button.getAttribute('aria-label');frame.allow='fullscreen; encrypted-media; picture-in-picture';frame.allowFullscreen=true;button.replaceWith(frame)}));
+
+const cookieBanner=document.querySelector('.cookie-banner');
+if(cookieBanner){let accepted=false;try{accepted=localStorage.getItem('podmoskovie-cookie-accepted')==='yes'}catch{}cookieBanner.hidden=accepted;cookieBanner.querySelector('.cookie-btn').addEventListener('click',()=>{try{localStorage.setItem('podmoskovie-cookie-accepted','yes')}catch{}cookieBanner.hidden=true})}
