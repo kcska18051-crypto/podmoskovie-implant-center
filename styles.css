@@ -231,10 +231,13 @@ section.tint {
 dialog h3 {
   margin-bottom: 18px;
 }
+.hero-exclusive {
+  color: var(--teal-ink);
+}
 .hero-treatment {
   display: block;
   margin-bottom: 10px;
-  color: var(--teal-ink);
+  color: var(--ink);
   font-weight: 600;
   font-size: 1.12em;
   line-height: 1.35;
