@@ -2752,6 +2752,18 @@ section:has(.systems-explorer) {
     sans-serif;
   color: #222829;
 }
+/* Full-arch prices by implant brand. */
+.solution-price-option + .solution-price-option {
+  margin-top: 14px;
+}
+.solution-brand-label {
+  display: block;
+  margin-bottom: 4px;
+  font: 400 13px/1.4 Montserrat, Arial, sans-serif;
+}
+.solution-brand-cost {
+  white-space: nowrap;
+}
 .solution-price small {
   display: block;
   font:
